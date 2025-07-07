@@ -179,6 +179,4 @@ void main() {
 
 afficherTousLesEvenements(fakeDataEvenements);
 
-
-
 }
