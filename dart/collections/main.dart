@@ -105,6 +105,80 @@ void main() {
     });
   };
 
-  afficherProgramme(scenes);
+  // afficherProgramme(scenes);
+
+  Map<String, Map<String, dynamic>> fakeDataEvenements = {
+    "evenement1": {
+      "nom": "Electro Night Fest",
+      "lieu": "Dôme de la Musique",
+      "date": "2025-08-15",
+      "genres": genres.where((g) => g == 'Électro' || g == 'Hip-Hop').toList(),
+      "artistes": [artistes[0], artistes[2], artistes[4]],
+      "scenes": {
+        "Grande Scène": [artistes[0], artistes[2]],
+        "Scène Indie": [artistes[4]],
+      },
+    },
+    "evenement2": {
+      "nom": "Jazz & Chill",
+      "lieu": "Théâtre Antique",
+      "date": "2025-09-10",
+      "genres": genres.where((g) => g == 'Jazz' || g == 'Classique').toList(),
+      "artistes": [artistes[5], artistes[6]],
+      "scenes": {
+        "Jazz Lounge": [artistes[5]],
+        "Open Stage": [artistes[6]],
+      },
+    },
+    "evenement3": {
+      "nom": "Rock Vibes",
+      "lieu": "Stade Central",
+      "date": "2025-10-01",
+      "genres": genres.where((g) => g == 'Rock').toList(),
+      "artistes": [artistes[8], artistes[9]],
+      "scenes": {
+        "Rock Arena": [artistes[8], artistes[9]],
+      },
+    },
+  };
+
+
+ void afficherTousLesEvenements(Map<String, Map<String, dynamic>> evenements) {
+    print("\n PROGRAMME DES ÉVÉNEMENTS\n");
+
+    evenements.forEach((id, evenement) {
+      print("ID : $id");
+      print("Nom : ${evenement['nom']}");
+      print("Lieu : ${evenement['lieu']}");
+      print("Date : ${evenement['date']}");
+
+      print("Genres :");
+      for (var genre in evenement['genres']) {
+        print("- $genre");
+      }
+
+      print("Artistes :");
+      for (var artiste in evenement['artistes']) {
+        print("- $artiste");
+      }
+
+      print("Scènes :");
+      Map<String, List<String>> scenes = Map<String, List<String>>.from(
+        evenement['scenes'],
+      );
+      scenes.forEach((sceneName, artistList) {
+        print("  $sceneName :");
+        for (var artist in artistList) {
+          print("    - $artist");
+        }
+      });
+
+      print(""); 
+    });
+  }
+
+afficherTousLesEvenements(fakeDataEvenements);
+
+
 
 }
