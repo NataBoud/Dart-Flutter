@@ -93,6 +93,8 @@ void afficherMesActivites() {
     // Vos activités :
     // velo (16 points) (2 fois)
     // natation (9 points) (1 fois)
+    // print(stats[activite]);
+    // print(totalPoints);
   }
 
   // Affichage regroupé avec (x fois) systématiquement
@@ -100,7 +102,7 @@ void afficherMesActivites() {
   stats.forEach((activite, count) {
     int points = activite.pointsEffort * count;
     print(
-      '${activite.emojiCouleur} ${activite.name} ($points points) ($count fois)',
+      '${activite.emojiCouleur} ${activite.name} ($points points) ($count fois) ${activite.description}',
     );
   });
 
