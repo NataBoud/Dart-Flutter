@@ -1,5 +1,6 @@
 {
     "conventionalCommits.scopes": [
-        "functions"
+        "functions",
+        "dart"
     ]
 }
