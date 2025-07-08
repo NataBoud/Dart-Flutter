@@ -1,7 +1,7 @@
 enum BoissonType {
   cafe('☕', 'café', Duration(seconds: 1)),
-  the('🍵', 'thé', Duration(seconds: 2)),
-  chocolat('🍫', 'chocolat chaud', Duration(seconds: 3));
+  the('🍵', 'thé', Duration(seconds: 4)),
+  chocolat('🍫', 'chocolat chaud', Duration(seconds: 6));
 
   final String emoji;
   final String nom;

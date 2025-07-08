@@ -43,9 +43,9 @@ void afficherMenu() {
 
 Stream<String> preparerBoisson(BoissonType boisson) async* {
   yield '🧃 Préparation de ${boisson.nom} en cours... \n';
-  await Future.delayed(Duration(seconds: 4));
+  await Future.delayed(Duration(seconds: 1));
   yield '🔄 Mélange des ingrédients...\n';
-  await Future.delayed(Duration(seconds: 3));
+  await Future.delayed(Duration(seconds: 1));
   yield '🔥 Chauffage / infusion...\n';
   await Future.delayed(boisson.tempsPreparation);
   yield '✅ Finalisation de ${boisson.nom}...\n';
