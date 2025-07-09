@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Démo Flutter',
+      title: 'Démo Flutter test',
       theme: ThemeData(
         // Ceci est le thème de votre application.
         //
@@ -29,9 +29,9 @@ class MyApp extends StatelessWidget {
         //
         // Cela fonctionne également pour le code : la plupart des changements
         // de code peuvent être testés simplement avec un hot reload.
-        colorScheme: ColorScheme.fromSeed(seedColor: const Color.fromARGB(255, 48, 218, 59)),    
+        colorScheme: ColorScheme.fromSeed(seedColor: const Color.fromARGB(255, 206, 25, 61)),    
       ),
-      home: const MyHomePage(title: 'Page d’accueil de la démo Flutter'),
+      home: const MyHomePage(title: 'Démo Flutter test 2'),
     );
   }
 }
