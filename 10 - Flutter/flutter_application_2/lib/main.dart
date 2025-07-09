@@ -23,114 +23,100 @@ class MainApp extends StatelessWidget {
           toolbarHeight: 76,
         ),
         // BODY
-        body: SizedBox.expand(
+        body: Center(
+
           child: Container(
-            color: Color.fromARGB(255, 231, 231, 229),
 
-            child: Container(
-              margin: const EdgeInsets.all(16),
-              padding: const EdgeInsets.all(16),
+            margin: const EdgeInsets.all(16),
+            padding: const EdgeInsets.all(16),
 
-              // CARTES PRODUIT
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(16),
-                boxShadow: [
-                  BoxShadow(
-                    color: const Color.fromARGB(12, 0, 0, 0),
-                    blurRadius: 8,
-                    offset: Offset(0, 4),
-                  ),
-                ],
-              ),
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(16),
+              boxShadow: const [BoxShadow(color: Colors.black12, blurRadius: 8,offset: Offset(0, 4),),],
+            ),
 
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  // IMAGE
-                  Expanded(
-                    flex: 2,
-
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(8),
-                      child: Image.network(
-                        'https://podoways.fr/cdn/shop/files/Basketdevillefemmeconfortablearrierepodoways.webp?v=1742168311&width=2200',
-                        fit: BoxFit.cover,
-                        // height: 100,
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+               // Image produit
+                Container(
+                  width: 100,
+                  height: 100,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(12),
+                    image: const DecorationImage(
+                      image: NetworkImage(
+                        'https://medias.lequipe.fr/img-photo-jpg/nike-top-3-des-dernieres-sorties-sneakers/1500000002229142/30:0,1170:760-1200-800-75/7f63f.jpg',
                       ),
+                      fit: BoxFit.cover,
                     ),
                   ),
-                  SizedBox(width: 16),
-
-                  Expanded(
-                    flex: 4,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        const Text(
-                          'Chaussures de sport',
-                          style: TextStyle(
-                            fontSize: 18,
-                            fontWeight: FontWeight.w800,
-                          ),
+                ),
+                SizedBox(width: 16),
+                
+                // INFO PRODUIT
+                Expanded(
+               
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const Text(
+                        'Chaussures de sport',
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.w800,
                         ),
-                        const SizedBox(height: 8),
-                        const Text(
-                          '59,99 €',
-                          style: TextStyle(
-                            color: Colors.green,
-                            fontSize: 18,
-                            fontWeight: FontWeight.w800,
-                          ),
+                      ),
+                      const SizedBox(height: 6
+                      ),
+                      const Text(
+                        '59,99 €',
+                        style: TextStyle(
+                          color: Colors.green,
+                          fontSize: 18,
+                          fontWeight: FontWeight.w800,
                         ),
-                        const SizedBox(height: 12),
+                      ),
+                      const SizedBox(height: 10),
 
-
-                        Container(
-                          padding: const EdgeInsets.symmetric(
-                            horizontal: 10,
-                            vertical: 6,
-                          ),
-                          decoration: BoxDecoration(
-                            color: const Color.fromARGB(255, 59, 129, 250), 
-                            borderRadius: BorderRadius.circular(
-                              8,
+                      Container(
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 10,
+                          vertical: 6,
+                        ),
+                        decoration: BoxDecoration(
+                          color: const Color.fromARGB(255, 59, 129, 250),
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: const [
+                            Icon(Icons.shopping_cart, color: Colors.white),
+                            SizedBox(width: 8),
+                            Text(
+                              'Ajouter',
+                              style: TextStyle(
+                                fontSize: 14,
+                                fontWeight: FontWeight.w600,
+                                color: Colors.white, // texte blanc
+                              ),
                             ),
-                          ),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.min, 
-                            children: const [
-                              Icon(
-                                Icons.shopping_cart,
-                                color: Colors
-                                    .white, 
-                              ),
-                              SizedBox(width: 8),
-                              Text(
-                                'Ajouter',
-                                style: TextStyle(
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.w600,
-                                  color: Colors.white, // texte blanc
-                                ),
-                              ),
-                            ],
-                          ),
+                          ],
                         ),
-
-
-
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
+                ),
 
 
 
-                ],
-              ),
+              ],
             ),
           ),
         ),
+
+        backgroundColor: const Color(0xFFF2F2F2),
       ),
     );
   }
