@@ -1,4 +1,4 @@
-name: form_app
+name: form_app_2
 description: "A new Flutter project."
 publish_to: 'none'
 version: 0.1.0
@@ -17,5 +17,11 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
-  assets:
-    - 'assets/fish.png'
+  fonts:
+    - family: Poppins
+      fonts:
+        - asset: assets/fonts/Poppins-Regular.ttf
+        - asset: assets/fonts/Poppins-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/Poppins-SemiBold.ttf
+          weight: 600
